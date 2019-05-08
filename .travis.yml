@@ -1,12 +1,16 @@
 language: c
-sudo: false # only for faster builds
-compiler: 
--clang
- -gcc
- script:
- -gcc -o jaya jaya.c // we can use gcc instead of clang too
- ./jaya
- -gcc -o demon demon.c
- ./demon
-- gcc -o keerthi keerthi.c
- ./keerthi
+	sudo: false # only for faster builds
+	script:
+	  - clang -coverage -O0 keerthi.c -o keerthi
+	  - ./keerthi
+	  - gcov keerthi.c
+    - clang -coverage -O0 demon.c -o demon
+	  - ./demon
+	  - gcov demon.c
+    - clang -coverage -O0 jaya.c -o jaya
+	  - ./jaya
+	  - gcov jaya.c
+	
+	after_success:
+	  - bash <(curl -s https://codecov.io/bash)
+
