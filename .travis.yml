@@ -1,0 +1,12 @@
+language: c
+sudo: false # only for faster builds
+compiler: 
+-clang
+ -gcc
+ script:
+ -gcc -o jaya jaya.c // we can use gcc instead of clang too
+ ./jaya
+ -gcc -o demon demon.c
+ ./demon
+- gcc -o keerthi keerthi.c
+ ./keerthi
