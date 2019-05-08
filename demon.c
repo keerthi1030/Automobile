@@ -1,1 +1,14 @@
-
+#include <stdio.h>
+ 
+int main()
+{
+  int c = 1;  // Initializing variable
+ 
+  while (c <= 10)  // While loop will execute till the condition is true
+  {
+    printf("%d ", c);  // Note the space after %d for gap in the numbers we want in output
+    c++;
+  }
+ 
+  return 0;
+}
