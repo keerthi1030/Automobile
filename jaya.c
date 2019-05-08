@@ -2,12 +2,13 @@
 int main()
 {
    int num, reverse_num=0, remainder,temp;
-   printf("Enter an integer: ");
-   scanf("%d", &num);
+   //printf("Enter an integer: ");
+   //scanf("%d", &num);
 
    /* Here we are generating a new number (reverse_num)
     * by reversing the digits of original input number
     */
+   num=121;
    temp=num;
    while(temp!=0)
    {
